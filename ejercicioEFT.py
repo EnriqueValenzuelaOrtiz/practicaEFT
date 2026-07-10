@@ -65,14 +65,64 @@ def buscar_codigo(codigo, dic_ventas):
     return codigo in ventas
 
 
-def agregar_producto
+def agregar_producto(codigo, nombre, categoria, tamano, tipo, temporada, precio, stock):
+    if codigo in  dic_productos:
+        return False
 
+    dic_productos[codigo]=[codigo, nombre, categoria, tamano, tipo, temporada, precio, stock]
+
+    dic_ventas[codigo]= [precio, stock]
+
+    return True
 
 def validar_codigo(codigo, dic_productos):
     if codigo.strip()!="" and codigo in dic_productos:
         return True
     else:
         return False
+
+def validar_nombre(nombre):
+    if nombre.strip() >!= "":
+        return True
+    return False
+
+def validar_categoria(categoria):
+    if categoria.strip() >!= "":
+        return True
+    return False
+
+def validar_tamano(tamano):
+    if tamano in ("chico", "mediano", "grande"):
+        return True
+    return False
+def validar_leche(leche):
+    if leche.strip() != "":
+        return True
+    return False
+
+def validar_temporada(temporada):
+    if temporada in ("s", "n"):
+        return True
+    return False
+
+def validar_precio(precio):
+    if int(precio) >0:
+        return True
+    return False
+
+def validar_stock(stock):
+    if int(stock) >=0:
+        return True
+    return False
+
+
+
+
+
+
+
+
+    
     
 
 
